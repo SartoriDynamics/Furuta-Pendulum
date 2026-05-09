@@ -13,5 +13,5 @@ Copyright (c) 2024 GTI - UFMG
 ## Images
 
 <img src="/Furuta images/Furuta.png" alt="Self-balancing bicycle" width="250"/>
-<img src="/Furuta images/Diagram.png" alt="Electronic schematic" width="250"/>
+<img src="/Furuta images/Diagram.png" alt="Electronic schematic" width="400"/>
 
