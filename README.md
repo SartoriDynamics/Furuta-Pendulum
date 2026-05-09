@@ -12,14 +12,10 @@ Copyright (c) 2024 GTI - UFMG
   
 ## Images
 
-<p align="center">
-  <img src="/Furuta images/Furuta.png"
-       alt="Furuta Pendulum"
-       width="200"/>
+<img src="/Furuta images/Furuta.png"
+alt="Furuta Pendulum" width="200"/> 
 </p>
 
-<p align="center">
-  <img src="/Furuta images/Diagram.png"
-       alt="Electronic schematic"
-       width="400"/>
+<img src="/Furuta images/Diagram.png"
+alt="Electronic schematic" width="400"/>
 </p>
