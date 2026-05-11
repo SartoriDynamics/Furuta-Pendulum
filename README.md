@@ -48,6 +48,7 @@ Copyright (c) 2024 GTI - UFMG
   - **get_data.ipynb** / **get_data.py** → Identical scripts for collecting and saving real-time data from the ESP32 to `data_log.txt`. 
 - **3D CAD Online** → [View on Onshape](https://cad.onshape.com/documents/d0d2d40c9dd0c88f858cd038/w/86dce8532c9b6c8310216a8c/e/c2fa23f7c1c4edc232f4e580?renderMode=0&uiState=68e07acc73f9dd32bc20c706)  
 
+---
 
 ## Images
 
