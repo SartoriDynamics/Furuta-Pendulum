@@ -12,6 +12,10 @@ Copyright (c) 2024 GTI - UFMG
   
 ## Images
 
-<img src="/SBB images/bia.png" alt="Self-balancing bicycle" width="500"/>
-<img src="/SBB images/esquematico.png" alt="Electronic schematic" width="500"/>
+<img src="/Furuta images/Furuta.png"
+alt="Furuta Pendulum" width="200"/> 
+</p>
 
+<img src="/Furuta images/Diagram.png"
+alt="Electronic schematic" width="400"/>
+</p>
