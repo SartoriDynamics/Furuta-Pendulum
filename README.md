@@ -40,7 +40,6 @@ Copyright (c) 2024 GTI - UFMG
 - **Arduino codes/** → ESP32 firmware.
   - **LQR/** 
     - `LQR.ino` → Main LQR control firmware.
-
 - **Python codes/** → Python notebooks and scripts for design and analysis.
   - `LQR_Controller_Design.ipynb` → State-space modeling and LQR design.
   - `Save_Data_During.ipynb` → Real-time data acquisition.
@@ -53,7 +52,7 @@ Copyright (c) 2024 GTI - UFMG
 
 <table>
   <tr>
-    <td align="center" width="50%" border="1" cellpadding="12">
+    <td align="center" width="25%" border="1" cellpadding="12">
       <img src="Furuta images/Furuta.png" alt="Assembled Furuta Pendulum prototype" width="100%"/>
     </td>
     <td align="center" width="50%" border="1" cellpadding="12">
