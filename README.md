@@ -45,9 +45,6 @@ Copyright (c) 2024 GTI - UFMG
   - `Save_Data_During.ipynb` → Real-time data acquisition.
   - `Save_Data_After.ipynb` → Post-processing and logging.
   - `b2_experiment_model.ipynb` → Experimental model validation.
-  - `b2Experiment.txt` → Friction characterization data.
-  - `stepData.txt` → Step response data.
-  - `pulseData.txt` → Pulse response data.
 
 ---
 
