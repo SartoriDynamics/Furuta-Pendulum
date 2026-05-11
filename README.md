@@ -9,7 +9,7 @@ Copyright (c) 2024 GTI - UFMG
 ## Hardware
 
 - 1× ESP-WROOM-32 WEMOS D1 R32 development board
-- 2× Nidec 24H DC motors
+- 1× Nidec 24H DC motors
 - 1× Rotary Incremental Encoder
   
 ---
@@ -35,30 +35,31 @@ Copyright (c) 2024 GTI - UFMG
 
 ## 📂 Repository Structure
 
-- **Arduino IDE Configuration.txt** → Configuration guide for Arduino IDE setup with ESP32 boards.
-
-- **Arduino codes/** → ESP32 firmware implementation containing the real-time LQR control algorithm.
+- **Arduino IDE Configuration.txt** → Arduino IDE setup notes for ESP32.
+- **Arduino codes/** → ESP32 firmware.
   - **LQR/** 
-    - `LQR.ino` → Main firmware implementing the LQR controller, sensor reading (rotary encoders), PWM output generation for motor drivers, and serial telemetry transmission.
+    - `LQR.ino` → Main LQR control firmware.
 
-- **Python codes/** → Python scripts and Jupyter notebooks for LQR controller design, real-time data acquisition, and experimental analysis.
-  - `LQR_Controller_Design.ipynb` → Comprehensive notebook for system identification, state-space modeling, linearization, and LQR gains computation.
-  - `Save_Data_During.ipynb` → Real-time data acquisition script that collects angular position and velocity measurements during ESP32 operation via serial communication.
-  - `Save_Data_After.ipynb` → Post-experiment data processing and logging utility for organizing collected measurements.
-  - `b2_experiment_model.ipynb` → Detailed analysis notebook validating experimental data against theoretical model predictions.
-  - `b2Experiment.txt` → Sample experimental data log from friction and system characterization tests.
-  - `stepData.txt` → Experimental data from step input response tests for model validation.
-  - `pulseData.txt` → Experimental data from pulse disturbance injection tests.
-
-- **Furuta images/** → Visual documentation of the platform.
-  - `Furuta.png` → Photograph of the assembled Furuta Pendulum physical prototype showing the mechanical structure, motors, and encoder setup.
-  - `Diagram.png` → Electronic schematic diagram detailing the ESP32 connections, motor drivers, encoder wiring, and power distribution.
+- **Python codes/** → Python notebooks and scripts for design and analysis.
+  - `LQR_Controller_Design.ipynb` → State-space modeling and LQR design.
+  - `Save_Data_During.ipynb` → Real-time data acquisition.
+  - `Save_Data_After.ipynb` → Post-processing and logging.
+  - `b2_experiment_model.ipynb` → Experimental model validation.
+  - `b2Experiment.txt` → Friction characterization data.
+  - `stepData.txt` → Step response data.
+  - `pulseData.txt` → Pulse response data.
 
 ---
 
 ## 📸 Images
 
-<img src="Furuta images/Furuta.png" alt="Furuta Pendulum physical prototype with assembled structure, motors, and rotary encoder" width="200"/> 
+<p align="center">
+  <img src="Furuta images/Furuta.png" alt="Assembled Furuta Pendulum prototype" width="200"/><br>
+  <sub>Assembled Furuta Pendulum prototype.</sub>
+</p>
 
-<img src="Furuta images/Diagram.png" alt="Electronic schematic showing ESP32 microcontroller, motor drivers, encoder connections, and power distribution" width="400"/>
+<p align="center">
+  <img src="Furuta images/Diagram.png" alt="ESP32 wiring and electronics diagram" width="400"/><br>
+  <sub>ESP32 wiring and electronics diagram.</sub>
+</p>
 
