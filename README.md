@@ -52,8 +52,8 @@ Copyright (c) 2024 GTI - UFMG
 
 <table>
   <tr>
-    <td align="center" width="25%" border="1" cellpadding="12">
-      <img src="Furuta images/Furuta.png" alt="Assembled Furuta Pendulum prototype" width="100%"/>
+    <td align="center" width="50%" border="1" cellpadding="12">
+      <img src="Furuta images/Furuta.png" alt="Assembled Furuta Pendulum prototype" width="50%"/>
     </td>
     <td align="center" width="50%" border="1" cellpadding="12">
       <img src="Furuta images/Diagram.png" alt="ESP32 wiring and electronics diagram" width="100%"/>
