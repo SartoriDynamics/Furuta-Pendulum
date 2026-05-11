@@ -36,6 +36,7 @@ Copyright (c) 2024 GTI - UFMG
 ## 📂 Repository Structure
 
 - **Arduino IDE Configuration.txt** → Arduino IDE setup notes for ESP32.
+- **Furuta 3D printing files/** → 3D printable CAD models for physical parts.
 - **Arduino codes/** → ESP32 firmware.
   - **LQR/** 
     - `LQR.ino` → Main LQR control firmware.
@@ -50,13 +51,21 @@ Copyright (c) 2024 GTI - UFMG
 
 ## 📸 Images
 
-<p align="center">
-  <img src="Furuta images/Furuta.png" alt="Assembled Furuta Pendulum prototype" width="200"/><br>
-  <sub>Assembled Furuta Pendulum prototype.</sub>
-</p>
-
-<p align="center">
-  <img src="Furuta images/Diagram.png" alt="ESP32 wiring and electronics diagram" width="400"/><br>
-  <sub>ESP32 wiring and electronics diagram.</sub>
-</p>
-
+<table>
+  <tr>
+    <td align="center" width="50%" border="1" cellpadding="12">
+      <img src="Furuta images/Furuta.png" alt="Assembled Furuta Pendulum prototype" width="100%"/>
+    </td>
+    <td align="center" width="50%" border="1" cellpadding="12">
+      <img src="Furuta images/Diagram.png" alt="ESP32 wiring and electronics diagram" width="100%"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <em>Assembled Furuta Pendulum prototype.</em>
+    </td>
+    <td align="center">
+      <em>ESP32 wiring and electronics diagram.</em>
+    </td>
+  </tr>
+</table>
