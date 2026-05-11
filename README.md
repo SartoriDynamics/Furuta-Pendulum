@@ -9,7 +9,7 @@ Copyright (c) 2024 GTI - UFMG
 ## Hardware
 
 - 1× ESP-WROOM-32 WEMOS D1 R32 development board
-- 1× Nidec 24H DC motors
+- 2× Nidec 24H DC motors
 - 1× Rotary Incremental Encoder
   
 ---
@@ -35,27 +35,21 @@ Copyright (c) 2024 GTI - UFMG
 
 ## 📂 Repository Structure
 
-- **/3d_print** → STL files for 3D printing the physical structure of the Furuta Pendulum prototype.
-- **/arduino_code/furuta** → Contains the control algorithm implemented on the ESP32 (Arduino IDE).  
-  - **furuta.ino** → Main code that runs the real-time LQR control loop, reads encoder data, applies PWM signals to the motor, logs measurements, and sends data via serial.
-- **/matlab_simulink** → MATLAB scripts and Simulink models for system modeling, simulation, and validation.  
-  - **LQR.mlx** → Computes the optimal LQR gain matrix.  
-  - **simulation_linear_model.slx** → Simulink model for the linearized system.  
-  - **simulation_non_linear_model.slx** → Simulink model for the nonlinear system.  
-  - **data_log_pulse.txt** / **data_log_step.txt** → Experimental data collected from pulse and step disturbance tests.  
-  - **plots_pulse.mlx** / **plots_step.mlx** → Scripts for generating comparative plots (simulation vs. experimental data).  
-- **/python_code** → Scripts for data acquisition from the ESP32 via serial communication.  
-  - **get_data.ipynb** / **get_data.py** → Identical scripts for collecting and saving real-time data from the ESP32 to `data_log.txt`. 
-- **3D CAD Online** → [View on Onshape](https://cad.onshape.com/documents/d0d2d40c9dd0c88f858cd038/w/86dce8532c9b6c8310216a8c/e/c2fa23f7c1c4edc232f4e580?renderMode=0&uiState=68e07acc73f9dd32bc20c706)  
+- **Arduino IDE Configuration.txt** → Configuration guide for Arduino IDE setup with ESP32 boards.
+- **Arduino codes/** → ESP32 firmware implementation containing the real-time LQR control algorithm.
+  - Reads sensor data from rotary encoders.
+  - Computes LQR control signals.
+  - Generates PWM outputs to motor drivers.
+  - Sends telemetry data via serial communication.
+- **Python codes/** → Python scripts for real-time data acquisition and logging from the ESP32 via serial port.
+  - Collects angular position and velocity measurements.
+  - Logs experimental data for analysis and validation.
+- **Furuta images/** → Images and diagrams of the physical prototype and electronic schematic.
 
 ---
 
-## Images
+## 📸 Images
 
-<img src="/Furuta images/Furuta.png"
-alt="Furuta Pendulum" width="200"/> 
-</p>
+<img src="Furuta images/Furuta.png" alt="Furuta Pendulum" width="200"/> 
 
-<img src="/Furuta images/Diagram.png"
-alt="Electronic schematic" width="400"/>
-</p>
+<img src="Furuta images/Diagram.png" alt="Electronic schematic" width="400"/>
