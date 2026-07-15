@@ -42,8 +42,6 @@ Copyright (c) 2024 GTI - UFMG
     - `LQR.ino` → Main LQR control firmware.
 - **Python codes/** → Python notebooks and scripts for design and analysis.
   - `LQR_Controller_Design.ipynb` → State-space modeling and LQR design.
-  - `Save_Data_During.ipynb` → Real-time data acquisition.
-  - `Save_Data_After.ipynb` → Post-processing and logging.
   - `b2_experiment_model.ipynb` → Experimental model validation.
 
 ---
@@ -53,7 +51,7 @@ Copyright (c) 2024 GTI - UFMG
 <table>
   <tr>
     <td align="center" width="50%" border="1" cellpadding="12">
-      <img src="Furuta images/Furuta.png" alt="Assembled Furuta Pendulum prototype" width="50%"/>
+      <img src="Furuta images/Furuta.jpg" alt="Assembled Furuta Pendulum prototype" width="50%"/>
     </td>
     <td align="center" width="50%" border="1" cellpadding="12">
       <img src="Furuta images/Diagram.png" alt="ESP32 wiring and electronics diagram" width="100%"/>
