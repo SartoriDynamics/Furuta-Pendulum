@@ -28,7 +28,7 @@ Copyright (c) 2024 GTI - UFMG
 1. The ESP32 runs the control loop at 100 Hz (Ts = 10 ms), reading angular positions and velocities from encoders.  
 2. The control signal is computed via LQR feedback and applied to the motor driver using PWM modulation.  
 3. Disturbances (step or pulse) can be injected to evaluate controller performance.  
-4. The ESP32 sends sampled data through the serial interface, which is logged by the Python script.  
+4. The ESP32 sends the sampled data through the serial interface, where it can be viewed and copied using the Arduino IDE. 
 5. The collected data can then be analyzed and compared with Simulink simulations.
 
 ---
@@ -42,8 +42,6 @@ Copyright (c) 2024 GTI - UFMG
     - `LQR.ino` → Main LQR control firmware.
 - **Python codes/** → Python notebooks and scripts for design and analysis.
   - `LQR_Controller_Design.ipynb` → State-space modeling and LQR design.
-  - `Save_Data_During.ipynb` → Real-time data acquisition.
-  - `Save_Data_After.ipynb` → Post-processing and logging.
   - `b2_experiment_model.ipynb` → Experimental model validation.
 
 ---
@@ -53,7 +51,7 @@ Copyright (c) 2024 GTI - UFMG
 <table>
   <tr>
     <td align="center" width="50%" border="1" cellpadding="12">
-      <img src="Furuta images/Furuta.png" alt="Assembled Furuta Pendulum prototype" width="50%"/>
+      <img src="Furuta images/Furuta.jpg" alt="Assembled Furuta Pendulum prototype" width="57.24%"/>
     </td>
     <td align="center" width="50%" border="1" cellpadding="12">
       <img src="Furuta images/Diagram.png" alt="ESP32 wiring and electronics diagram" width="100%"/>
