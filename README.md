@@ -44,8 +44,8 @@ Copyright (c) 2024 GTI - UFMG
   - **LQR/**
     - `LQR.ino` → Firmware containing Kalman state estimation and LQR feedback control.
 - **Python codes/** → Python notebooks for modeling, controller design, nonlinear simulation, and experimental validation.
-  - `LQR_Controller_Upright.ipynb` → LQR design, nonlinear simulation, and experimental validation about the upright equilibrium.
-  - `LQR_Controller_Downward.ipynb` → LQR design, nonlinear simulation, and experimental validation about the downward equilibrium.
+  - `LQR_Controller_Upright.ipynb` → LQR design and nonlinear simulation about the upright equilibrium.
+  - `LQR_Controller_Downward.ipynb` → LQR design and nonlinear simulation about the downward equilibrium.
   - `b2_experiment_model.ipynb` → Identification and validation of the pendulum viscous-friction parameter.
 
 ---
