@@ -43,15 +43,10 @@ Copyright (c) 2024 GTI - UFMG
 - **Arduino codes/** → ESP32 firmware for real-time estimation and control.
   - **LQR/**
     - `LQR.ino` → Firmware containing Kalman state estimation and LQR feedback control.
-- **Python codes/** → Python notebooks and experimental datasets for modeling, controller design, simulation, and validation.
-  - `LQR_Controller_Upright.ipynb` → LQR design and nonlinear simulation about the upright equilibrium.
-  - `LQR_Controller_Downward.ipynb` → LQR design and nonlinear simulation about the downward equilibrium.
-  - `UprightPulseData.txt` → Experimental data for the upright-equilibrium pulse test.
-  - `UprightStepData.txt` → Experimental data for the upright-equilibrium step test.
-  - `DownwardPulseData.txt` → Experimental data for the downward-equilibrium pulse test.
-  - `DownwardStepData.txt` → Experimental data for the downward-equilibrium step test.
+- **Python codes/** → Python notebooks for modeling, controller design, nonlinear simulation, and experimental validation.
+  - `LQR_Controller_Upright.ipynb` → LQR design, nonlinear simulation, and experimental validation about the upright equilibrium.
+  - `LQR_Controller_Downward.ipynb` → LQR design, nonlinear simulation, and experimental validation about the downward equilibrium.
   - `b2_experiment_model.ipynb` → Identification and validation of the pendulum viscous-friction parameter.
-  - `b2Experiment.txt` → Experimental data used for viscous-friction identification.
 
 ---
 
