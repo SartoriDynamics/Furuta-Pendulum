@@ -29,7 +29,7 @@ Copyright (c) 2024 GTI - UFMG
 ## ⚙️ How It Works
 
 1. The ESP32 runs the control loop at 100 Hz (`Ts = 10 ms`) and reads the two angular positions from the encoders.
-2. A Kalman filter processes the angular-position measurements and estimates the complete system state, including the two angular velocities.
+2. A Kalman filter processes the angular-position measurements and estimates the complete system state.
 3. The control voltage is computed using LQR state feedback and applied to the motor driver through PWM.
 4. Separate LQG controllers stabilize the system about the upright and downward equilibria.
 5. Pulse and step disturbances are applied to evaluate disturbance rejection at both operating points.
@@ -43,9 +43,9 @@ Copyright (c) 2024 GTI - UFMG
 - **Furuta 3D printing files/** → 3D-printable CAD models for the physical components.
 - **Arduino codes/** → ESP32 firmware for real-time state estimation and control.
   - **LQG_up/**
-    - `LQG_up.ino` → LQG firmware for stabilization and disturbance-rejection experiments about the upright equilibrium.
+    - `LQG_up.ino` → LQG firmware for stabilization about the upright equilibrium.
   - **LQG_down/**
-    - `LQG_down.ino` → LQG firmware for stabilization and disturbance-rejection experiments about the downward equilibrium.
+    - `LQG_down.ino` → LQG firmware for stabilization about the downward equilibrium.
 - **Python codes/** → Python notebooks for modeling, controller design, and nonlinear simulation.
   - `LQR_Controller_Upright.ipynb` → LQR design and nonlinear simulation about the upright equilibrium.
   - `LQR_Controller_Downward.ipynb` → LQR design and nonlinear simulation about the downward equilibrium.
