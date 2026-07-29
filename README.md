@@ -1,5 +1,6 @@
 # Furuta Pendulum
-A low-cost Furuta Pendulum platform developed for control research and education at UFMG.
+
+A low-cost, open-source Furuta Pendulum platform developed for control research and education at UFMG.
 
 This project is released under the MIT License.  
 Copyright (c) 2024 GTI - UFMG
@@ -9,40 +10,43 @@ Copyright (c) 2024 GTI - UFMG
 ## 🔩 Hardware
 
 - 1× ESP-WROOM-32 WEMOS D1 R32 development board
-- 1× Nidec 24H DC motors
-- 1× Rotary Incremental Encoder
-  
+- 1× NIDEC 24H DC motor with an integrated encoder
+- 1× rotary incremental encoder for the pendulum arm
+
 ---
 
 ## 🛠️ Features
 
-- State-space modeling and linearization of the Furuta Pendulum.  
-- LQR (Linear Quadratic Regulator) control design.  
-- Real-time implementation on ESP32 using PWM and rotary encoders.  
+- State-space modeling and linearization about the upright and downward equilibria.
+- LQG control combining LQR state feedback with Kalman state estimation.
+- Stabilization and disturbance-rejection experiments at both operating points.
+- Nonlinear simulations and controller design in Python.
+- Real-time implementation on an ESP32 using PWM and rotary encoders.
 - Complete 3D-printable structure for assembling the physical prototype.
 
 ---
 
 ## ⚙️ How It Works
 
-1. The ESP32 runs the control loop at 100 Hz (Ts = 10 ms), reading angular positions and velocities from encoders.  
-2. The control signal is computed via LQR feedback and applied to the motor driver using PWM modulation.  
-3. Disturbances (step or pulse) can be injected to evaluate controller performance.  
-4. The ESP32 sends the sampled data through the serial interface, where it can be viewed and copied using the Arduino IDE. 
-5. The collected data can then be analyzed and compared with Simulink simulations.
+1. The ESP32 runs the control loop at 100 Hz (`Ts = 10 ms`) and reads the two angular positions from the encoders.
+2. A Kalman filter improves the angular-position measurements and estimates the two angular velocities.
+3. The control voltage is computed by LQR state feedback and applied to the motor driver through PWM.
+4. Pulse and step disturbances evaluate disturbance rejection about the upright and downward equilibria.
+5. The sampled data are transmitted through the serial interface and compared with nonlinear Python simulations.
 
 ---
 
 ## 📂 Repository Structure
 
-- **Arduino IDE Configuration.txt** → Arduino IDE setup notes for ESP32.
-- **Furuta 3D printing files/** → 3D printable CAD models for physical parts.
-- **Arduino codes/** → ESP32 firmware.
-  - **LQR/** 
-    - `LQR.ino` → Main LQR control firmware.
-- **Python codes/** → Python notebooks and scripts for design and analysis.
-  - `LQR_Controller_Design.ipynb` → State-space modeling and LQR design.
-  - `b2_experiment_model.ipynb` → Experimental model validation.
+- **Arduino IDE Configuration.txt** → Arduino IDE setup notes for the ESP32.
+- **Furuta 3D printing files/** → 3D-printable CAD models for the physical components.
+- **Arduino codes/** → ESP32 firmware for real-time estimation and control.
+  - **LQR/**
+    - `LQR.ino` → Firmware containing Kalman state estimation and LQR feedback control.
+- **Python codes/** → Python notebooks for modeling, controller design and nonlinear simulation.
+  - `LQR_Controller_Upright.ipynb` → LQR design and nonlinear simulation about the upright equilibrium.
+  - `LQR_Controller_Downward.ipynb` → LQR design and nonlinear simulation about the downward equilibrium.
+  - `b2_experiment_model.ipynb` → Identification and validation of the pendulum viscous-friction parameter.
 
 ---
 
