@@ -28,40 +28,40 @@ ESP32Encoder NIDEC_ENC;  // Encoder for the NIDEC motor
 ESP32Encoder ROD_ENC;    // Encoder for the pendulum rod
 
 // Counts per radian (used to convert counts → radians)
-const double CNT_PER_RAD_NIDEC = 400 / (2.0 * PI);  // ≈ 63.66
-const double CNT_PER_RAD_ROD = 1440 / (2.0 * PI);      // ≈ 229.18
+const float CNT_PER_RAD_NIDEC = 400 / (2.0 * PI);  // ≈ 63.66
+const float CNT_PER_RAD_ROD = 1440 / (2.0 * PI);      // ≈ 229.18
 
 // Conversion rad to deg
-const double DEG2RAD = PI / 180.0;
+const float DEG2RAD = PI / 180.0;
 
 // Safety limits (in degrees)
-const double base_limit = 180.0 * DEG2RAD;
-const double thetaLQR = 20.0 * DEG2RAD;
+const float base_limit = 180.0 * DEG2RAD;
+const float thetaLQR = 20.0 * DEG2RAD;
 
 // Voltage-to-PWM conversion factor
-const double V_2_PWM = 21.25;
+const float V_2_PWM = 21.25;
 
 // LQR control gains
-const double K1 = -0.537;
-const double K2 = 16.8;
-const double K3 = -0.326;
-const double K4 = 1.34;
+const float K1 = -0.537;
+const float K2 = 16.8;
+const float K3 = -0.326;
+const float K4 = 1.34;
 
 
 // Variables to store encoder readings, PWM output, and accumulated states
-double rod_position = -PI;    // Current angular position of the pendulum rod (incremental encoder counts)
-double rod_speed = 0;
-double nidec_position = 0;  // Current angular position of the NIDEC motor
-double nidec_speed = 0;
+float rod_position = -PI;    // Current angular position of the pendulum rod (incremental encoder counts)
+float rod_speed = 0;
+float nidec_position = 0;  // Current angular position of the NIDEC motor
+float nidec_speed = 0;
 int NIDEC_count = 0;  // Raw encoder count for NIDEC motor in the current sample
 int ROD_count = 0;    // Raw encoder count for pendulum rod in the current sample
-double u = 0, disturbance = 0;
+float u = 0, disturbance = 0;
 
 // Sampling time variables
-double Ts = 0.01, currentT = 0.0, previousT = 0.0;
+float Ts = 0.01, currentT = 0.0, previousT = 0.0;
 
 // Rand aplitude
-double rand_Amp = 0.0;
+float rand_Amp = 0.0;
 
 // ===== Model dimensions =====
 constexpr int n = 4;  // Number of states
@@ -164,7 +164,7 @@ void setup() {
 
 void loop() {
 
-  currentT = micros()/1000000.0;  // Current time
+  currentT = millis()/1000.0;  // Current time
   if (currentT - previousT >= Ts) { // Run control loop every Ts seconds
     previousT = currentT;
 
@@ -177,7 +177,7 @@ void loop() {
       u = -(K1*nidec_position + K2*rod_position + K3*nidec_speed + K4*rod_speed);
       // if (nidec_speed==0) u += random(rand_Amp)-(rand_Amp/2); // sometimes the motor stops
 
-      if (currentT >= 20.0 && currentT <= 21.0) disturbance = 1;
+      // if (currentT >= 20.0 && currentT <= 21.0) disturbance = 1;
       // else disturbance = 0;
       u += disturbance;
 

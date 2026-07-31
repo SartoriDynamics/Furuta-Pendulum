@@ -29,45 +29,45 @@ ESP32Encoder NIDEC_ENC;  // Encoder for the NIDEC motor
 ESP32Encoder ROD_ENC;    // Encoder for the pendulum rod
 
 // Conversion rad to deg
-const double RAD2DEG = 180.0f / PI;  // ≈ 57.2958
+const float RAD2DEG = 180.0f / PI;  // ≈ 57.2958
 
 // Safety limits (in degrees)
-const double BASE_LIMIT_DEG = 160.0f;  // Max angle for the NIDEC motor (±)
-const double ROD_LIMIT_DEG = 20.0f;    // Max angle for the pendulum (±)
+const float BASE_LIMIT_DEG = 160.0f;  // Max angle for the NIDEC motor (±)
+const float ROD_LIMIT_DEG = 20.0f;    // Max angle for the pendulum (±)
 
 // Encoder counts per revolution (adjust according to your measurement!)
-const double CPR_NIDEC = 400.0f;  // Motor encoder (100 PPR ×4 = 400)
-const double CPR_ROD = 1440.0f;   // Rod encoder (360 PPR ×4 = 1440)
+const float CPR_NIDEC = 400.0f;  // Motor encoder (100 PPR ×4 = 400)
+const float CPR_ROD = 1440.0f;   // Rod encoder (360 PPR ×4 = 1440)
 
 // Counts per radian (used to convert counts → radians)
-const double CNT_PER_RAD_NIDEC = CPR_NIDEC / (2.0f * PI);  // ≈ 63.66
-const double CNT_PER_RAD_ROD = CPR_ROD / (2.0f * PI);      // ≈ 229.18
+const float CNT_PER_RAD_NIDEC = CPR_NIDEC / (2.0f * PI);  // ≈ 63.66
+const float CNT_PER_RAD_ROD = CPR_ROD / (2.0f * PI);      // ≈ 229.18
 
 // Voltage-to-PWM conversion factor
-const double V_2_PWM = 21.25;
+const float V_2_PWM = 21.25;
 
 // LQR control gains
-const double K1 = 0.582;
-const double K2 = -3.67;
-const double K3 = 0.156;
-const double K4 = -0.129;
+const float K1 = 0.582;
+const float K2 = -3.67;
+const float K3 = 0.156;
+const float K4 = -0.129;
 
 // Variables to store encoder readings, PWM output, and accumulated states
-double rod_position = 0;    // Current angular position of the pendulum rod (incremental encoder counts)
-double nidec_position = 0;  // Current angular position of the NIDEC motor
-double nidec_integral = 0;
-double nidec_speed = 0;
-double rod_speed = 0;
+float rod_position = 0;    // Current angular position of the pendulum rod (incremental encoder counts)
+float nidec_position = 0;  // Current angular position of the NIDEC motor
+float nidec_integral = 0;
+float nidec_speed = 0;
+float rod_speed = 0;
 int NIDEC_count = 0;  // Raw encoder count for NIDEC motor in the current sample
 int ROD_count = 0;    // Raw encoder count for pendulum rod in the current sample
-double u = 0;
-double disturbance = 0;
+float u = 0;
+float disturbance = 0;
 
 // Sampling time variables
-double Ts = 0.01, currentT = 0.0, previousT = 0.0;
+float Ts = 0.01, currentT = 0.0, previousT = 0.0;
 
 // Rand aplitude
-double rand_Amp = 0.7;
+float rand_Amp = 0.7;
 
 // ===== Model dimensions =====
 constexpr int n = 4;  // Number of states
@@ -160,7 +160,7 @@ void setup() {
 // MAIN LOOP: Runs repeatedly after setup
 void loop() {
 
-  currentT = micros()/1000000.0;  // Current time
+  currentT = millis()/1000.0;  // Current time
   if (currentT - previousT >= Ts) { // Run control loop every Ts seconds
     previousT = currentT;
 
@@ -168,9 +168,8 @@ void loop() {
 
     // Compute control law (state feedback)
     u = -(K1*nidec_position + K2*rod_position + K3*nidec_speed + K4*rod_speed);
-    // if (nidec_speed==0) u += random(rand_Amp)-(rand_Amp/2); // sometimes the motor stops
     
-    if (currentT >= 10.0 && currentT <= 11.0) disturbance = 1;
+    // if (currentT >= 10.0 && currentT <= 11.0) disturbance = 1;
     // else disturbance = 0;
     u += disturbance;
 
